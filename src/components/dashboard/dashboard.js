@@ -13,7 +13,7 @@ class Dashboard extends Component {
         </div>{/* /.col */}
         <div className="col-sm-6">
           <ol className="breadcrumb float-sm-right">
-            <li className="breadcrumb-item"><a href="#">Home</a></li>
+            <li className="breadcrumb-item">Home</li>
             <li className="breadcrumb-item active">Dashboard v1</li>
           </ol>
         </div>{/* /.col */}
@@ -36,7 +36,7 @@ class Dashboard extends Component {
             <div className="icon">
               <i className="ion ion-bag" />
             </div>
-            <a href="#" className="small-box-footer">More info <i className="fas fa-arrow-circle-right" /></a>
+            <p className="small-box-footer">More info <i className="fas fa-arrow-circle-right" /></p>
           </div>
         </div>
         {/* ./col */}
@@ -50,7 +50,7 @@ class Dashboard extends Component {
             <div className="icon">
               <i className="ion ion-stats-bars" />
             </div>
-            <a href="#" className="small-box-footer">More info <i className="fas fa-arrow-circle-right" /></a>
+            <p className="small-box-footer">More info <i className="fas fa-arrow-circle-right" /></p>
           </div>
         </div>
         {/* ./col */}
@@ -64,7 +64,7 @@ class Dashboard extends Component {
             <div className="icon">
               <i className="ion ion-person-add" />
             </div>
-            <a href="#" className="small-box-footer">More info <i className="fas fa-arrow-circle-right" /></a>
+            <p className="small-box-footer">More info <i className="fas fa-arrow-circle-right" /></p>
           </div>
         </div>
         {/* ./col */}
@@ -78,7 +78,7 @@ class Dashboard extends Component {
             <div className="icon">
               <i className="ion ion-pie-graph" />
             </div>
-            <a href="#" className="small-box-footer">More info <i className="fas fa-arrow-circle-right" /></a>
+            <p className="small-box-footer">More info <i className="fas fa-arrow-circle-right" /></p>
           </div>
         </div>
         {/* ./col */}
@@ -146,7 +146,7 @@ class Dashboard extends Component {
                     <span className="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
                   </div>
                   {/* /.direct-chat-infos */}
-                  <img className="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image" />
+                  <img className="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user" />
                   {/* /.direct-chat-img */}
                   <div className="direct-chat-text">
                     Is this template really for free? That's unbelievable!
@@ -176,7 +176,7 @@ class Dashboard extends Component {
                     <span className="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
                   </div>
                   {/* /.direct-chat-infos */}
-                  <img className="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image" />
+                  <img className="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user" />
                   {/* /.direct-chat-img */}
                   <div className="direct-chat-text">
                     Working with AdminLTE on a great new app! Wanna join?
@@ -205,7 +205,7 @@ class Dashboard extends Component {
               <div className="direct-chat-contacts">
                 <ul className="contacts-list">
                   <li>
-                    <a href="#">
+                    <button>
                       <img className="contacts-list-img" src="dist/img/user1-128x128.jpg" />
                       <div className="contacts-list-info">
                         <span className="contacts-list-name">
@@ -215,11 +215,11 @@ class Dashboard extends Component {
                         <span className="contacts-list-msg">How have you been? I was...</span>
                       </div>
                       {/* /.contacts-list-info */}
-                    </a>
+                    </button>
                   </li>
                   {/* End Contact Item */}
                   <li>
-                    <a href="#">
+                    <button>
                       <img className="contacts-list-img" src="dist/img/user7-128x128.jpg" />
                       <div className="contacts-list-info">
                         <span className="contacts-list-name">
@@ -229,11 +229,11 @@ class Dashboard extends Component {
                         <span className="contacts-list-msg">I will be waiting for...</span>
                       </div>
                       {/* /.contacts-list-info */}
-                    </a>
+                    </button>
                   </li>
                   {/* End Contact Item */}
                   <li>
-                    <a href="#">
+                    <button>
                       <img className="contacts-list-img" src="dist/img/user3-128x128.jpg" />
                       <div className="contacts-list-info">
                         <span className="contacts-list-name">
@@ -243,11 +243,11 @@ class Dashboard extends Component {
                         <span className="contacts-list-msg">I'll call you back at...</span>
                       </div>
                       {/* /.contacts-list-info */}
-                    </a>
+                    </button>
                   </li>
                   {/* End Contact Item */}
                   <li>
-                    <a href="#">
+                    <button>
                       <img className="contacts-list-img" src="dist/img/user5-128x128.jpg" />
                       <div className="contacts-list-info">
                         <span className="contacts-list-name">
@@ -257,35 +257,7 @@ class Dashboard extends Component {
                         <span className="contacts-list-msg">Where is your new...</span>
                       </div>
                       {/* /.contacts-list-info */}
-                    </a>
-                  </li>
-                  {/* End Contact Item */}
-                  <li>
-                    <a href="#">
-                      <img className="contacts-list-img" src="dist/img/user6-128x128.jpg" />
-                      <div className="contacts-list-info">
-                        <span className="contacts-list-name">
-                          John K.
-                          <small className="contacts-list-date float-right">1/27/2015</small>
-                        </span>
-                        <span className="contacts-list-msg">Can I take a look at...</span>
-                      </div>
-                      {/* /.contacts-list-info */}
-                    </a>
-                  </li>
-                  {/* End Contact Item */}
-                  <li>
-                    <a href="#">
-                      <img className="contacts-list-img" src="dist/img/user8-128x128.jpg" />
-                      <div className="contacts-list-info">
-                        <span className="contacts-list-name">
-                          Kenneth M.
-                          <small className="contacts-list-date float-right">1/4/2015</small>
-                        </span>
-                        <span className="contacts-list-msg">Never mind I found...</span>
-                      </div>
-                      {/* /.contacts-list-info */}
-                    </a>
+                    </button>
                   </li>
                   {/* End Contact Item */}
                 </ul>
