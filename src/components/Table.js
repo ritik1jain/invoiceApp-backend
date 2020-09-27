@@ -3,7 +3,7 @@ import { useTable, useFilters, useGroupBy, useExpanded, usePagination, useSortBy
 import {
     useExportData
 } from 'react-table-plugins'
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import Papa from "papaparse";
 import XLSX from "xlsx";
 import JsPDF from "jspdf";
@@ -103,13 +103,13 @@ export default function Table({ columns, data, parent_action, updateMyData, skip
     function getExportFileBlob({ columns, data, fileType, fileName }) {
         if (fileType === "csv") {
             // CSV example
-            const headerNames = columns.filter((c) => c.Header != 'Action').map((col) => col.exportValue);
+            const headerNames = columns.filter((c) => c.Header !== 'Action').map((col) => col.exportValue);
             const csvString = Papa.unparse({ fields: headerNames, data });
             return new Blob([csvString], { type: "text/csv" });
         } else if (fileType === "xlsx") {
             // XLSX example
 
-            const header = columns.filter((c) => c.Header != 'Action').map((c) => c.exportValue);
+            const header = columns.filter((c) => c.Header !== 'Action').map((c) => c.exportValue);
             const compatibleData = data.map((row) => {
                 const obj = {};
                 header.forEach((col, index) => {
@@ -130,7 +130,7 @@ export default function Table({ columns, data, parent_action, updateMyData, skip
         }
         //PDF example
         if (fileType === "pdf") {
-            const headerNames = columns.filter((c) => c.Header != 'Action').map((column) => column.exportValue);
+            const headerNames = columns.filter((c) => c.Header !== 'Action').map((column) => column.exportValue);
             const doc = new JsPDF();
             doc.autoTable({
                 head: [headerNames],
@@ -258,7 +258,7 @@ export default function Table({ columns, data, parent_action, updateMyData, skip
                   Export as PDF
       </button>
 
-                {(Object.keys(selectedRowIds).length != 0) ?
+                {(Object.keys(selectedRowIds).length !== 0) ?
                     <button class="btn btn-danger"
                         onClick={() => {
                             BulkDelete(selectedFlatRows, parent_action);
@@ -335,16 +335,16 @@ export default function Table({ columns, data, parent_action, updateMyData, skip
                     <div className="form-group input-group col-md-2">
                         <ul className="pagination">
                             <li class={!canPreviousPage ? "page-item disabled" : "page-item "} >
-                                <a className="page-link" onClick={() => gotoPage(0)} >{'<<'}</a>
+                                <button className="page-link" onClick={() => gotoPage(0)} >{'<<'}</button>
                             </li>
                             <li class={!canPreviousPage ? "page-item disabled" : "page-item "}>
-                                <a className="page-link" onClick={() => previousPage()} >{'<'}</a>
+                                <button className="page-link" onClick={() => previousPage()} >{'<'}</button>
                             </li>
                             <li class={!canNextPage ? "page-item disabled" : "page-item "}>
                                 <a className="page-link" onClick={() => nextPage()} >{'>'}</a>
                             </li>
                             <li class={!canNextPage ? "page-item disabled" : "page-item "}>
-                                <a className="page-link" onClick={() => gotoPage(pageCount - 1)} >{'>>'}</a>
+                                <button className="page-link" onClick={() => gotoPage(pageCount - 1)} >{'>>'}</button>
                             </li>
                         </ul>
                     </div>

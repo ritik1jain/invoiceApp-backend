@@ -1,45 +1,46 @@
 import React, { Component } from 'react';
 import { Formik } from 'formik';
-import * as Yup from 'yup';
+// import * as Yup from 'yup';
 import axios from 'axios';
 import swal from 'sweetalert';
-import fs from 'fs';
+// import fs from 'fs';
 const FILE_SIZE = 160 * 1024;
 const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/gif', 'image/png'];
-const ProfileSchema = Yup.object().shape({
-  avatars: Yup.mixed()
-    .required('A file is required')
-    .test(
-      'fileSize',
-      'File too large',
-      (value) => value && value.size <= FILE_SIZE
-    )
-    .test(
-      'fileFormat',
-      'Unsupported Format',
-      (value) => value && SUPPORTED_FORMATS.includes(value.type)
-    ),
-  username: Yup.string()
-    .min(2, 'username is Too Short!')
-    .max(50, 'username is Too Long!')
-    .required('username is Required'),
-  first_name: Yup.string()
-    .min(2, 'firstname is Too Short!')
-    .max(30, 'firstname is Too Long!')
-    .required('firstname is Required'),
-  last_name: Yup.string()
-    .min(2, 'lastname is Too Short!')
-    .max(30, 'lastname is Too Long!')
-    .required('lastname is Required'),
-  phone: Yup.number('Phone number is use only number')
-    .min(10, 'Phone number must be 10 characters!')
-    .required('Phone number is Required'),
-  address: Yup.string()
-    .min(12, 'address is Too Short!')
-    .max(50, 'address is Too Long!')
-    .required('address is Required'),
-  email: Yup.string().email('Invalid email').required('Email is Required'),
-});
+
+// const ProfileSchema = Yup.object().shape({
+//   avatars: Yup.mixed()
+//     .required('A file is required')
+//     .test(
+//       'fileSize',
+//       'File too large',
+//       (value) => value && value.size <= FILE_SIZE
+//     )
+//     .test(
+//       'fileFormat',
+//       'Unsupported Format',
+//       (value) => value && SUPPORTED_FORMATS.includes(value.type)
+//     ),
+//   username: Yup.string()
+//     .min(2, 'username is Too Short!')
+//     .max(50, 'username is Too Long!')
+//     .required('username is Required'),
+//   first_name: Yup.string()
+//     .min(2, 'firstname is Too Short!')
+//     .max(30, 'firstname is Too Long!')
+//     .required('firstname is Required'),
+//   last_name: Yup.string()
+//     .min(2, 'lastname is Too Short!')
+//     .max(30, 'lastname is Too Long!')
+//     .required('lastname is Required'),
+//   phone: Yup.number('Phone number is use only number')
+//     .min(10, 'Phone number must be 10 characters!')
+//     .required('Phone number is Required'),
+//   address: Yup.string()
+//     .min(12, 'address is Too Short!')
+//     .max(50, 'address is Too Long!')
+//     .required('address is Required'),
+//   email: Yup.string().email('Invalid email').required('Email is Required'),
+// });
 
 class Profile extends Component {
   constructor(props) {
@@ -85,6 +86,7 @@ class Profile extends Component {
           }
           class='profile-user-img img-fluid img-circle'
           width={100}
+          alt=""
         />
       </div>
     );
@@ -132,7 +134,7 @@ class Profile extends Component {
     setFieldValue,
   }) => {
     return (
-      <form role='form' onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         {this.showPreviewImage(values)}
         <div className='card-body'>
           <div className='form-group'>
@@ -158,7 +160,7 @@ class Profile extends Component {
                   accept='image/*'
                   id='avatars'
                   className='custom-file-input'
-                  id='exampleInputFile'
+                  
                 />
                 <label className='custom-file-label' htmlFor='exampleInputFile'>
                   Choose File
